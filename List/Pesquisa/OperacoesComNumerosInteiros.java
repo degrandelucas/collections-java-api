@@ -12,5 +12,8 @@ public class OperacoesComNumerosInteiros {
 
         System.out.println(listaNumero.exibirNumeros());
         System.out.println(listaNumero.calcularSoma());
+        listaNumero.ordemCrescente();
+        System.out.println(listaNumero.encontrarMenorNumero());
+
     }
 }

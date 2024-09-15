@@ -1,6 +1,6 @@
 package List.Pesquisa;
 
-public class Numeros {
+public class Numeros implements Comparable<Numeros> {
     //atributos
     private int numeroInteiro;
 
@@ -17,6 +17,11 @@ public class Numeros {
     @Override
     public String toString() {
         return "Numeros [numeroInteiro=" + numeroInteiro + "]";
+    }
+
+    @Override
+    public int compareTo(Numeros crescenteNumeroInteiro) {
+       return Integer.compare(this.numeroInteiro, crescenteNumeroInteiro.numeroInteiro);
     }
    
     
