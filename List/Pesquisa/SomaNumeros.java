@@ -34,9 +34,21 @@ public class SomaNumeros {
         return soma;
     }
     
-    // public int encontrarMaiorNumero(){
-        
-    // }
+    public void ordemDecrescente(){
+        if (!numeros.isEmpty()) {
+            Collections.sort(numeros, new ComparatorOrdemDecrescente());
+            System.out.println(numeros);
+        }
+        else {
+            System.out.println("lista de números está vazia");
+            
+        }
+    }
+
+    public Numeros encontrarMaiorNumero(){
+        ordemDecrescente();
+        return numeros.get(0);
+    }
 
     public void ordemCrescente(){
         if (!numeros.isEmpty()) {
