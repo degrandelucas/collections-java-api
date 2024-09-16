@@ -1,6 +1,6 @@
 package List.Ordenacao;
 
-public class Alunos implements Comparable {
+public class Alunos implements Comparable<Alunos> {
 
     //Atributos
     private String alunos;
@@ -29,13 +29,15 @@ public class Alunos implements Comparable {
         this.matricula = matricula;
     }
 
-    //metodo compareTo do Comparable
+    //metodo compareTo do Comparable (int pela matrícula)
     @Override
-    public int compareTo(Object o) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+    public int compareTo(Alunos outroAluno) {
+        return Integer.compare(this.matricula, outroAluno.getMatricula());
     }
 
-    
+    @Override
+    public String toString() {
+        return "Alunos [alunos=" + alunos + ", matricula=" + matricula + "]";
+    }    
     
 }
