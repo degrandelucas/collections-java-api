@@ -1,4 +1,4 @@
-package List.Pesquisa;
+package List.src.Pesquisa;
 
 public class OperacoesComNumerosInteiros {
     public static void main(String[] args) {

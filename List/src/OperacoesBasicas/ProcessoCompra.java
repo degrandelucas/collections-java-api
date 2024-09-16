@@ -1,4 +1,4 @@
-package List.OperacoesBasicas;
+package List.src.OperacoesBasicas;
 public class ProcessoCompra {
     public static void main(String[] args) {
 

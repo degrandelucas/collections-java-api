@@ -1,4 +1,4 @@
-package List.Ordenacao;
+package List.src.Ordenacao;
 
 public class Alunos implements Comparable<Alunos> {
 

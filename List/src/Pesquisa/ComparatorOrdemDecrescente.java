@@ -1,4 +1,4 @@
-package List.Pesquisa;
+package List.src.Pesquisa;
 
 import java.util.Comparator;
 
