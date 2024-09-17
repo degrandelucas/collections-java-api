@@ -51,6 +51,21 @@ public class OrdenacaoEPesquisa {
         pesquisaSalaAula.organizarPorMatricula();
         pesquisaSalaAula.organizarPorNome();
 
+        for (Alunos alunoAlteracao : pesquisaSalaAula.salaAula){
+            if (alunoAlteracao.getMatricula() == 7){
+                alunoAlteracao.setAlunos("Danyelle Degrande");
+            }
+            break; //sai do loop
+        }
+
+        for (Alunos alunoAlteracao : pesquisaSalaAula.salaAula){
+            if (alunoAlteracao.getAlunos() == "Danyelle Degrande") {
+                alunoAlteracao.setMatricula(11);
+            }
+            break; //sai do loop
+        }
+
+        pesquisaSalaAula.exibir();
     }
 }
 
