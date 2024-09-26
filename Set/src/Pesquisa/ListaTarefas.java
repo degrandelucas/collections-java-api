@@ -89,5 +89,34 @@ public class ListaTarefas {
         listaTarefas.clear();
     }
         
-         
+    public static void main(String[] args) {
+        ListaTarefas novaListaTarefas = new ListaTarefas();
+
+        novaListaTarefas.adicionarTarefa(false, "Tarefa 1");
+        novaListaTarefas.adicionarTarefa(true, "Tarefa 1");
+        novaListaTarefas.adicionarTarefa(false, "Tarefa 2");
+        novaListaTarefas.adicionarTarefa(true, "Tarefa 3");
+        novaListaTarefas.adicionarTarefa(false, "Tarefa 4");
+        novaListaTarefas.adicionarTarefa(true, "Tarefa 5");
+        novaListaTarefas.adicionarTarefa(false, "Tarefa 6");
+        novaListaTarefas.adicionarTarefa(true, "Tarefa 7");
+
+        novaListaTarefas.contarTarefas();
+
+        novaListaTarefas.exibirTarefas();
+
+        novaListaTarefas.obterTarefasConcluidas();
+        novaListaTarefas.exibirTarefas();
+
+        novaListaTarefas.obterTarefasPendentes();
+        novaListaTarefas.exibirTarefas();
+
+        novaListaTarefas.marcarTarefaConcluida("Tarefa 6");
+
+        novaListaTarefas.marcarTarefaPendente("Tarefa 7");
+
+        novaListaTarefas.exibirTarefas();
+        
+        novaListaTarefas.limparListaTarefas();
+    }     
 }
