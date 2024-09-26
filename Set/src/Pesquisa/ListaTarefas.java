@@ -64,16 +64,30 @@ public class ListaTarefas {
     public void marcarTarefaConcluida(String descricao){
         if (!listaTarefas.isEmpty()) {
             for (Tarefas tarefas : listaTarefas) {
-                if (!tarefas.isConcluida()){
-                    tarefasPendentes.add(tarefas);
+                if (tarefas.getDescricao().equalsIgnoreCase(descricao)){
+                    tarefas.setConcluida(true);
                 }
             }        
+        }else{
+            System.out.println("Lista de tarefas está vazia");
         }
     }
 
-    //     marcarTarefaConcluida(String descricao): Marca uma tarefa como concluída de acordo com a descrição.
-// marcarTarefaPendente(String descricao): Marca uma tarefa como pendente de acordo com a descrição.
-// limparListaTarefas(): Remove todas as tarefas da lista de tarefas.
+    public void marcarTarefaPendente(String descricao){
+        if (!listaTarefas.isEmpty()) {
+            for (Tarefas tarefas : listaTarefas) {
+                if (tarefas.getDescricao().equalsIgnoreCase(descricao)){
+                    tarefas.setConcluida(false);
+                }
+            }        
+        }else{
+            System.out.println("Lista de tarefas está vazia");
+        }
+    }
+
+    public void limparListaTarefas(){
+        listaTarefas.clear();
+    }
         
          
 }

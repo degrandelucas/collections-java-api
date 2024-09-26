@@ -20,6 +20,15 @@ public class Tarefas {
         return descricao;
     }
 
+    
+    public void setConcluida(boolean concluida) {
+        this.concluida = concluida;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     @Override
     public String toString() {
         return "Tarefas " + descricao + " concluida: " + concluida;
