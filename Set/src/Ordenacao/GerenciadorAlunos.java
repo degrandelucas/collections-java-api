@@ -60,6 +60,7 @@ public class GerenciadorAlunos {
         colegial1A.adicionarAluno("Luiza", 4, 9);
         colegial1A.adicionarAluno("Ronny", 5, 9.5);
         colegial1A.adicionarAluno("Rafaela", 6, 8.75);
+        colegial1A.adicionarAluno("Rafaela", 6, 8.8);
 
 
         colegial1A.exibirAlunos();
