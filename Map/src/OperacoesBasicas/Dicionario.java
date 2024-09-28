@@ -46,7 +46,7 @@ public class Dicionario {
     public void removerPalavra(String palavra){
         if (dicionario.containsKey(palavra)) {
             dicionario.remove(palavra);
-            System.out.println(palavra + "foi removida do dicionario");
+            System.out.println(palavra + " foi removida do dicionario");
         }
         else{
             System.out.println("palavra não está no dicionario");
