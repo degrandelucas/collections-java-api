@@ -1,6 +1,6 @@
 package Ordenacao;
 
-public class Alunos {
+public class Alunos implements Comparable<Alunos> {
     //atributos
     private String nome;
     private int matricula;
@@ -22,7 +22,7 @@ public class Alunos {
         return matricula;
     }
 
-    public double getNota() {
+    public double getMedia() {
         return media;
     }
 
@@ -43,6 +43,9 @@ public class Alunos {
         return "Aluno [" + nome + ", matricula=" + matricula + ", nota=" + media + "]";
     }
 
-    
+    @Override
+    public int compareTo(Alunos alunoNome) {
+        return this.nome.compareTo(alunoNome.getNome());
+    } 
 
 }
