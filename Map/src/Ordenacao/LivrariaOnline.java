@@ -2,6 +2,10 @@ package Map.src.Ordenacao;
 
 import java.util.HashMap; // Importa a classe HashMap para uso.
 import java.util.Map; // Importa a interface Map.
+import java.util.ArrayList;  // Importa a classe ArrayList para criar listas redimensionáveis.
+import java.util.Collections;  // Importa a classe Collections para operações de ordenação e manipulação em coleções.
+import java.util.List;  // Importa a interface List, que define comportamentos de listas de elementos.
+//import java.util
 
 public class LivrariaOnline {
     //atributos
@@ -13,8 +17,8 @@ public class LivrariaOnline {
     } 
 
     public void adicionarLivro(String link, String titulo, String autor, double preco){
-        Livro livro = new Livro(titulo, autor, preco);
-        livrariaOnline.put(link, livro);
+        Livro novoLivro = new Livro(titulo, autor, preco);
+        livrariaOnline.put(link, novoLivro);
     }
 
     public void removerLivro(String titulo){
@@ -48,12 +52,88 @@ public class LivrariaOnline {
         }
     }
 
+    public void pesquisarLivrosPorAutor(String autor) {
+        if (!livrariaOnline.isEmpty()) {
+            boolean autorEncontrado = false;
+            for (Livro livro : livrariaOnline.values()) {
+                if (livro.getAutor().equalsIgnoreCase(autor)) { 
+                    System.out.println("Título: " + livro.getTitulo() + ", Preço: " + livro.getPreco() + "do autor "+ autor);
+                    autorEncontrado = true;
+                }
+            }
+            if (!autorEncontrado) {
+                System.out.println("Nenhum livro encontrado para o autor: " + autor);
+            }
+        } else {
+            System.out.println("A livraria está vazia.");
+        }
+    }
+
+    public void obterLivroMaisCaro() {
+        if (!livrariaOnline.isEmpty()) {
+            Livro livroMaisCaro = null;
+            for (Livro livro : livrariaOnline.values()) {
+                if (livroMaisCaro == null || livro.getPreco() > livroMaisCaro.getPreco()) {
+                    livroMaisCaro = livro;
+                }
+            }
+            if (livroMaisCaro != null) {
+                System.out.println("Livro mais caro: " + livroMaisCaro.getTitulo() + ", Preço: " + livroMaisCaro.getPreco() + ", autor: "+ livroMaisCaro.getAutor());
+            }
+        } else {
+            System.out.println("A livraria está vazia.");
+        }
+    }
+
+    public void exibirLivroMaisBarato() {
+        if (!livrariaOnline.isEmpty()) {
+            Livro livroMaisBarato = null;
+            for (Livro livro : livrariaOnline.values()) {
+                if (livroMaisBarato == null || livro.getPreco() < livroMaisBarato.getPreco()) {
+                    livroMaisBarato = livro;
+                }
+            }
+            if (livroMaisBarato != null) {
+                System.out.println("Livro mais barato: " + livroMaisBarato.getTitulo() + ", Preço: " + livroMaisBarato.getPreco() + ", autor: "+ livroMaisBarato.getAutor());
+            }
+        } else {
+            System.out.println("A livraria está vazia.");
+        }
+    }
+
+    public static void main(String[] args) {
+        LivrariaOnline livrariaOnlineAvenida = new LivrariaOnline();
+
+        // Adiciona livros
+        livrariaOnlineAvenida.adicionarLivro("link1", "O Senhor dos Anéis", "J.R.R. Tolkien", 59.90);
+        livrariaOnlineAvenida.adicionarLivro("link2", "1984", "George Orwell", 39.90);
+        livrariaOnlineAvenida.adicionarLivro("link3", "O Hobbit", "J.R.R. Tolkien", 29.90);
+        livrariaOnlineAvenida.adicionarLivro("link4", "O Guia do Mochileiro das Galáxias", "Douglas Adams", 49.90);
+
+        // Exibe livros ordenados por preço
+        System.out.println("Livros ordenados por preço:");
+        livrariaOnlineAvenida.exibirLivrosOrdenadosPorPreco();
+
+        // Pesquisa livros por autor
+        System.out.println("\nPesquisando livros por autor 'J.R.R. Tolkien':");
+        livrariaOnlineAvenida.pesquisarLivrosPorAutor("J.R.R. Tolkien");
+
+        // Obtém o livro mais caro
+        System.out.println("\nObtendo o livro mais caro:");
+        livrariaOnlineAvenida.obterLivroMaisCaro();
+
+        // Exibe o livro mais barato
+        System.out.println("\nExibindo o livro mais barato:");
+        livrariaOnlineAvenida.exibirLivroMaisBarato();
+
+        // Remove um livro pelo título
+        System.out.println("\nRemovendo o livro '1984':");
+        livrariaOnlineAvenida.removerLivro("1984");
+
+        // Exibe livros após a remoção
+        System.out.println("\nLivros após a remoção:");
+        livrariaOnlineAvenida.exibirLivrosOrdenadosPorPreco();
+
+    }
+
 }
-
-// Crie uma classe chamada "LivrariaOnline" que representa uma livraria online. Essa classe utiliza um Map para armazenar os livros disponíveis na livraria, utilizando o link da obra na Amazon Marketplace como chave e um objeto da classe "Livro" como valor. A classe "Livro" possui atributos como título, autor e preço. Através da classe "LivrariaOnline", implemente os seguintes métodos:
-
-
-
-// pesquisarLivrosPorAutor(String autor): Retorna uma lista de todos os livros escritos por um determinado autor.
-// obterLivroMaisCaro(): Retorna o livro mais caro disponível na livraria.
-// exibirLivroMaisBarato(): Retorna o livro mais barato disponível na livraria.
